@@ -20,7 +20,8 @@ type stake struct {
 
 func (s stake) CalcBet() float32 {
 
-	return s.Funds * .6
+	//return s.Funds * .6
+	return 100.0
 }
 
 func (s *stake) Bet(amount float32) error {
