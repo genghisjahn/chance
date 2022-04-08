@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-const winchance = .6
+const winchance = .52
 
 type stake struct {
 	Funds      float32
@@ -20,8 +20,8 @@ type stake struct {
 
 func (s stake) CalcBet() float32 {
 
-	//return s.Funds * .6
-	return 100.0
+	return s.Funds * .6
+	//return 100.0
 }
 
 func (s *stake) Bet(amount float32) error {
@@ -57,8 +57,8 @@ func main() {
 			break
 		}
 	}
-	fmt.Println("MaxFunds:", s.MaxFunds)
-	fmt.Println("Funds:", s.Funds)
+	fmt.Printf("MaxFunds: %f\n", s.MaxFunds)
+	fmt.Printf("Funds: %f\n", s.Funds)
 	fmt.Println("Wins/Losses: ", s.Wins, s.Losses)
 
 }
